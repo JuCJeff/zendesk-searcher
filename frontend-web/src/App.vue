@@ -10,7 +10,7 @@
           transition="scale-transition"
           width="55"
         />
-        <h1>Zendesk Search</h1>
+        <h1>Zendesk Searcher</h1>
       </div>
     </v-app-bar>
 
