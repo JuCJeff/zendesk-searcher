@@ -13,8 +13,8 @@ Nodejs needs to be installed.
 7. Click **Clear** to clear results
 
 ## Notations
-1. The search results are generated based on exact value matching
-2. The data is directly served through given json files in the backend rather than put in a database for easier setup
+1. The search results are generated based on exact value matching.
+2. The data is directly served through given json files in the backend rather than put in a database for easier setup.
 
 ## Frontend setup
 ```
