@@ -7,7 +7,7 @@ const state = {
   currentSearchMode: "",
   currentSearchTerm: "",
   currentSearch: "",
-  searchResults: {}
+  searchResults: []
 };
 
 const mutations = {
@@ -34,7 +34,7 @@ const mutations = {
     state.searchResults = payload;
   },
   CLEAR_SEARCH_RESULTS(state) {
-    state.searchResults = {};
+    state.searchResults = [];
   }
 };
 

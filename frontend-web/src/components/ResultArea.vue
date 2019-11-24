@@ -19,8 +19,6 @@
         raised
         shaped
       >
-        <v-card-title> Result {{ index + 1 }} </v-card-title>
-
         <v-card-text class="white--text">
           <div
             v-for="(attrValue, index) in value"
