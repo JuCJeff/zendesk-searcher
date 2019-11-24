@@ -3,29 +3,29 @@
     <div v-if="searchResults.length == 0">
       <h2>No results found.</h2>
     </div>
-    <div
-      v-else
-      v-for="(value, index) in searchResults"
-      :key="index"
-      class="result-card"
-    >
+    <div v-else>
+      <h2 class="mb-5" v-if="searchResults.length == 1">
+        Found {{ searchResults.length }} result.
+      </h2>
+      <h2 class="mb-5" v-else>Found {{ searchResults.length }} results.</h2>
+
       <v-card
-        class="mx-auto"
+        v-for="(value, index) in searchResults"
+        :key="index"
+        class="result-card mx-auto"
         color="primary"
-        dark
         max-width="800"
+        dark
         raised
         shaped
       >
-        <v-card-title>
-          {{ index }}
-        </v-card-title>
+        <v-card-title> Result {{ index + 1 }} </v-card-title>
 
-        <v-card-text>
+        <v-card-text class="white--text">
           <div
             v-for="(attrValue, index) in value"
             :key="index"
-            class="key-value-pairs"
+            class="key-value-pairs my-5 mx-3"
           >
             {{ index }}: {{ attrValue }}
           </div>

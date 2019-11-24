@@ -27,9 +27,9 @@
         </v-flex>
       </v-layout>
 
-      <h1>{{ currentSearchMode }}</h1>
+      <!-- <h1>{{ currentSearchMode }}</h1>
       <h1>{{ currentSearchTerm }}</h1>
-      <h1>{{ currentSearch }}</h1>
+      <h1>{{ currentSearch }}</h1> -->
       <!-- <h1>{{ searchResults }}</h1> -->
 
       <v-layout text-center>
