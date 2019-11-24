@@ -1,4 +1,4 @@
-# Zendesk Searcher Application
+# Zendesk Searcher Web Application
 
 ## Frontend setup
 ```
