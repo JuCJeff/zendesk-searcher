@@ -84,7 +84,7 @@ export default {
   data: () => ({
     result: {},
     errorSnackbar: false,
-    errorText: "Please fill out all the given fields to generate search results."
+    errorText: "Please fill both search mode and term to generate search results."
   }),
 
   methods: {
@@ -103,8 +103,7 @@ export default {
     async generateSearchResults() {
       if (
         this.currentSearchMode === "" ||
-        this.currentSearchTerm === "" ||
-        this.currentSearch === ""
+        this.currentSearchTerm === ""
       ) {
         this.errorSnackbar = true;
         return;

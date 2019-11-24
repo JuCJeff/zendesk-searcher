@@ -27,7 +27,17 @@
             :key="index"
             class="key-value-pairs my-5 mx-3"
           >
-            {{ index }}: {{ attrValue }}
+            <v-layout>
+              <v-flex lg3 sm12> {{ index }}: </v-flex>
+              <v-flex lg9 sm12 v-if="typeof attrValue !== 'object'">{{ attrValue }}</v-flex>
+              <v-flex lg9 sm12 v-else>
+                <v-list v-for="(value, index) in attrValue" :key="index" color="secondary darken-4">
+                  <v-list-item>
+                    {{ value }}
+                  </v-list-item>
+                </v-list>
+              </v-flex>
+            </v-layout>
           </div>
         </v-card-text>
       </v-card>
