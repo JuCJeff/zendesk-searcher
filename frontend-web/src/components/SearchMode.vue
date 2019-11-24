@@ -10,14 +10,26 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "SearchMode",
 
+  mounted() {
+    this.setSearchModes();
+  },
+
   data: () => ({
-    modeOptions: ["Users", "Tickets", "Organizations"]
+    modeOptions: []
   }),
 
-  methods: {},
+  methods: {
+    async setSearchModes() {
+      let res = await axios.get("http://localhost:8081/mode");
+      let resArr = await res.data;
+      this.modeOptions = resArr;
+    }
+  },
 
   computed: {
     currentSearchMode: {

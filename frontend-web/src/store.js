@@ -15,6 +15,9 @@ const mutations = {
   CHANGE_CURRENT_SEARCH_MODE(state, payload) {
     state.currentSearchMode = payload;
   },
+  CLEAR_CURRENT_SEARCH_MODE(state) {
+    state.currentSearchMode = "";
+  },
   // For currentSearchTerm
   CHANGE_CURRENT_SEARCH_TERM(state, payload) {
     state.currentSearchTerm = payload;
@@ -43,6 +46,9 @@ const actions = {
   changeCurrentSearchMode(context, searchMode) {
     context.commit("CHANGE_CURRENT_SEARCH_MODE", searchMode);
   },
+  clearCurrentSearchMode(context) {
+    context.commit("CLEAR_CURRENT_SEARCH_MODE");
+  },
   // For currentSearchTerm
   changeCurrentSearchTerm(context, searchTerm) {
     context.commit("CHANGE_CURRENT_SEARCH_TERM", searchTerm);
@@ -57,7 +63,7 @@ const actions = {
   clearCurrentSearch(context) {
     context.commit("CLEAR_CURRENT_SEARCH");
   },
-  // for searchResults
+  // For searchResults
   changeSearchResults(context, result) {
     context.commit("CHANGE_SEARCH_RESULTS", result);
   },

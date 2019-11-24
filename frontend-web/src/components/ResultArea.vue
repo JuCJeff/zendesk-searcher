@@ -3,6 +3,7 @@
     <div v-if="searchResults.length == 0">
       <h2>No results found.</h2>
     </div>
+
     <div v-else>
       <h2 class="mb-5" v-if="searchResults.length == 1">
         Found {{ searchResults.length }} result.
@@ -17,7 +18,6 @@
         max-width="800"
         dark
         raised
-        shaped
       >
         <v-card-text class="white--text">
           <div
@@ -27,9 +27,15 @@
           >
             <v-layout>
               <v-flex lg3 sm12> {{ index }}: </v-flex>
-              <v-flex lg9 sm12 v-if="typeof attrValue !== 'object'">{{ attrValue }}</v-flex>
+              <v-flex lg9 sm12 v-if="typeof attrValue !== 'object'">{{
+                attrValue
+              }}</v-flex>
               <v-flex lg9 sm12 v-else>
-                <v-list v-for="(value, index) in attrValue" :key="index" color="secondary darken-4">
+                <v-list
+                  v-for="(value, index) in attrValue"
+                  :key="index"
+                  color="secondary darken-4"
+                >
                   <v-list-item>
                     {{ value }}
                   </v-list-item>
@@ -47,20 +53,9 @@
 export default {
   name: "ResultArea",
 
-  mouted() {
-    this.fetchData();
-  },
-
   data: () => ({}),
 
-  methods: {
-    async fetchData() {
-      this.result = {
-        item1: { id: 1, attr: "test" },
-        item2: { id: 2, attr: "test2" }
-      };
-    }
-  },
+  methods: {},
 
   computed: {
     searchResults: {

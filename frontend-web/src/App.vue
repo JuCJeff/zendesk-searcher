@@ -15,6 +15,7 @@
     </v-app-bar>
 
     <v-content>
+      <!--Fields that need to be specified by the user-->
       <v-layout text-center>
         <v-flex lg2 md2 xs12>
           <SearchMode />
@@ -27,11 +28,7 @@
         </v-flex>
       </v-layout>
 
-      <!-- <h1>{{ currentSearchMode }}</h1>
-      <h1>{{ currentSearchTerm }}</h1>
-      <h1>{{ currentSearch }}</h1> -->
-      <!-- <h1>{{ searchResults }}</h1> -->
-
+      <!--Buttons available for users to search and clear results-->
       <v-layout text-center>
         <v-flex lg12>
           <v-btn color="primary" class="btn" @click="generateSearchResults"
@@ -42,6 +39,7 @@
           >
         </v-flex>
       </v-layout>
+
       <!-- Dispaly error prompt for user -->
       <v-snackbar v-model="errorSnackbar" color="primary">
         {{ errorText }}
@@ -50,6 +48,7 @@
         </v-btn>
       </v-snackbar>
 
+      <!-- Area to display results after search -->
       <v-layout text-center>
         <v-flex lg12>
           <ResultArea />
@@ -77,44 +76,35 @@ export default {
     ResultArea
   },
 
-  mounted() {
-    this.fetchData();
-  },
+  mounted() {},
 
   data: () => ({
-    result: {},
     errorSnackbar: false,
-    errorText: "Please fill both search mode and term to generate search results."
+    errorText:
+      "Please fill both search mode and search term to generate search results."
   }),
 
   methods: {
-    fetchData() {
-      this.result = {
-        item1: { id: 1, attr: "test" },
-        item2: { id: 2, attr: "test2" }
-      };
-    },
     clearSearchResults() {
-      this.$store.dispatch("clearCurrentSearch");
+      this.$store.dispatch("clearCurrentSearchMode");
       this.$store.dispatch("clearCurrentSearchTerm");
+      this.$store.dispatch("clearCurrentSearch");
       this.$store.dispatch("clearSearchResults");
-      this.$store.dispatch("changeCurrentSearchMode", "");
     },
+
     async generateSearchResults() {
-      if (
-        this.currentSearchMode === "" ||
-        this.currentSearchTerm === ""
-      ) {
+      if (this.currentSearchMode === "" || this.currentSearchTerm === "") {
         this.errorSnackbar = true;
         return;
       }
 
-      let mode = this.currentSearchMode.toLowerCase();
-
-      let res = await axios.post("http://localhost:8081/" + mode, {
-        term: this.currentSearchTerm,
-        value: this.currentSearch.toString()
-      });
+      let res = await axios.post(
+        "http://localhost:8081/" + this.currentSearchMode,
+        {
+          term: this.currentSearchTerm,
+          value: this.currentSearch.toString()
+        }
+      );
       let resObj = await res.data;
 
       this.$store.dispatch("changeSearchResults", resObj);

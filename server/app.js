@@ -12,6 +12,8 @@ let users = require("./models/users.json");
 let tickets = require("./models/tickets.json");
 let organizations = require("./models/organizations.json");
 
+let modes = ["users", "organizations", "tickets"];
+
 let usersAttr = [
   "_id",
   "url",
@@ -63,9 +65,9 @@ let ticketsAttr = [
   "via"
 ];
 
-let generateResObjArr = require("./libs/helper.js/index.js");
+let generateResObjArr = require("./libs/helper.js");
 
-app.get("/users", res => {
+app.get("/users", (req, res) => {
   res.json(users);
 });
 
@@ -77,7 +79,7 @@ app.post("/users", (req, res) => {
   res.json(resObjArr);
 });
 
-app.get("/tickets", res => {
+app.get("/tickets", (req, res) => {
   res.json(tickets);
 });
 
@@ -89,7 +91,7 @@ app.post("/tickets", (req, res) => {
   res.json(resObjArr);
 });
 
-app.get("/organizations", res => {
+app.get("/organizations", (req, res) => {
   res.json(organizations);
 });
 
@@ -99,6 +101,10 @@ app.post("/organizations", (req, res) => {
   let resObjArr = generateResObjArr(organizations, term, value);
 
   res.json(resObjArr);
+});
+
+app.get("/mode", (req,res) => {
+  res.json(modes);
 });
 
 app.post("/mode", (req, res) => {
@@ -122,7 +128,7 @@ app.post("/mode", (req, res) => {
   }
 });
 
-app.get("/", res => {
+app.get("/", (req, res) => {
   res.send("You are connected to the server.");
 });
 

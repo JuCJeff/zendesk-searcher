@@ -30,6 +30,7 @@ export default {
         this.$store.dispatch("changeCurrentSearchTerm", input);
       }
     },
+    
     currentSearchMode: {
       get() {
         return this.$store.getters.getCurrentSearchMode;
@@ -42,9 +43,10 @@ export default {
     async currentSearchMode() {
       this.$store.dispatch("clearCurrentSearchTerm");
       let res = await axios.post("http://localhost:8081/mode", {
-        mode: this.currentSearchMode.toLowerCase()
+        mode: this.currentSearchMode
       });
       let resArr = await res.data;
+
       this.termOptions = resArr;
     }
   }
