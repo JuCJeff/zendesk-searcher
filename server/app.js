@@ -8,9 +8,9 @@ app.use(morgan("combined"));
 app.use(bodyParser.json());
 app.use(cors());
 
-let users = require("./users.json");
-let tickets = require("./tickets.json");
-let organizations = require("./organizations.json");
+let users = require("./models/users.json");
+let tickets = require("./models/tickets.json");
+let organizations = require("./models/organizations.json");
 
 let usersAttr = [
   "_id",
@@ -71,8 +71,7 @@ function generateResObjArr(base, term, value) {
       (typeof entry[term] === "number" && entry[term] == Number(value)) ||
       (typeof entry[term] === "boolean" &&
         entry[term].toString() === value.toLowerCase()) ||
-      (typeof entry[term] === "object" &&
-        (entry[term].includes(value) || entry[term].includes(Number(value))))
+      (typeof entry[term] === "object" && entry[term].includes(value))
     ) {
       resObjArr.push(entry);
     }
@@ -81,7 +80,7 @@ function generateResObjArr(base, term, value) {
   return resObjArr;
 }
 
-app.get("/users", (res) => {
+app.get("/users", res => {
   res.json(users);
 });
 
@@ -95,7 +94,7 @@ app.post("/users", (req, res) => {
   res.json(resObjArr);
 });
 
-app.get("/tickets", (res) => {
+app.get("/tickets", res => {
   res.json(tickets);
 });
 
@@ -107,7 +106,7 @@ app.post("/tickets", (req, res) => {
   res.json(resObjArr);
 });
 
-app.get("/organizations", (res) => {
+app.get("/organizations", res => {
   res.json(organizations);
 });
 
@@ -137,7 +136,7 @@ app.post("/mode", (req, res) => {
   }
 });
 
-app.get("/", (res) => {
+app.get("/", res => {
   res.send("You are connected to the server.");
 });
 
