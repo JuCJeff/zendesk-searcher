@@ -87,8 +87,6 @@ app.get("/users", res => {
 app.post("/users", (req, res) => {
   let term = req.body["term"];
   let value = req.body["value"];
-  console.log(term);
-  console.log(value);
   let resObjArr = generateResObjArr(users, term, value);
 
   res.json(resObjArr);
@@ -122,17 +120,20 @@ app.post("/mode", (req, res) => {
   let mode = req.body["mode"];
 
   switch (mode) {
+    case "users":
+      res.send(usersAttr);
+      break;
+      
     case "tickets":
       res.send(ticketsAttr);
       break;
 
     case "organizations":
-      console.log(organizationsAttr);
       res.send(organizationsAttr);
       break;
 
     default:
-      res.send(usersAttr);
+      res.send([]);
   }
 });
 
