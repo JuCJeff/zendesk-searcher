@@ -37,7 +37,7 @@ npm install
 npm start
 ```
 
-### Run tests
+### Run tests through Jest
 ```
 npm test
 ```
