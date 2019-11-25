@@ -43,7 +43,7 @@ npm test
 
 ### Lints and fixes files through ESlint
 ```
-npm lint <file name>
+eslint <file name>
 ```
 
 ## Frontend setup
