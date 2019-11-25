@@ -36,6 +36,11 @@ npm install
 npm start
 ```
 
+### Compiles and minifies for production
+```
+npm run build
+```
+
 ### Run tests through Jest
 ```
 npm test
@@ -43,7 +48,7 @@ npm test
 
 ### Lints and fixes files through ESlint
 ```
-npm run lint <file name>
+npm run lint
 ```
 
 ## Frontend setup
