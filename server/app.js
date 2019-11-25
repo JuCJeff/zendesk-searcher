@@ -14,7 +14,7 @@ let organizations = require("./models/organizations.json");
 
 let modes = ["users", "organizations", "tickets"];
 
-let helper = require("./libs/helper.js");
+let helper = require("./lib/helper.js");
 
 let usersAttr = helper.getAttributes(users);
 let organizationsAttr = helper.getAttributes(organizations);
