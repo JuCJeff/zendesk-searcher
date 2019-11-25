@@ -8,13 +8,13 @@ app.use(morgan("combined"));
 app.use(bodyParser.json());
 app.use(cors());
 
+let helper = require("./lib/helper.js");
+
 let users = require("./models/users.json");
 let tickets = require("./models/tickets.json");
 let organizations = require("./models/organizations.json");
 
 let modes = ["users", "organizations", "tickets"];
-
-let helper = require("./lib/helper.js");
 
 let usersAttr = helper.getAttributes(users);
 let organizationsAttr = helper.getAttributes(organizations);

@@ -4,17 +4,21 @@ test("an empty array of base input results in an empty array", () => {
   expect(helper.generateResObjArr([], "_id", 1)).toEqual([]);
 });
 
-test("one matching results with only string values in object", () => {
+test("one matching results with string values in object", () => {
   let onlyStringValueObject = [
     { name: "test", tag: "a" },
     { name: "test2", tag: "b" }
   ];
+  let stringValueObjectWithEmptyValue = [{ name: "test", description: "" }];
   expect(
     helper.generateResObjArr(onlyStringValueObject, "name", "test")
   ).toEqual([{ name: "test", tag: "a" }]);
+  expect(
+    helper.generateResObjArr(stringValueObjectWithEmptyValue, "description", "")
+  ).toEqual([{ name: "test", description: "" }]);
 });
 
-test("two matching results with only string values in object", () => {
+test("more than one matching results with string values in object", () => {
   let onlyStringValueObject = [
     { name: "test", tag: "a" },
     { name: "test2", tag: "a" }
@@ -56,19 +60,22 @@ test("matching results with within array in object", () => {
   ]);
 });
 
-test("matching empty results in value", () => {
-  let onlyStringValueObject = [
-    { _id: 1, description: "" },
-    { _id: 2, description: "hello" }
-  ];
-  expect(
-    helper.generateResObjArr(onlyStringValueObject, "description", "")
-  ).toEqual([{ _id: 1, description: "" }]);
+test("getting attributes based on key", () => {
+  let objArr = [{ _id: 1, description: "" }];
+  expect(helper.getAttributes(objArr)).toEqual(["_id", "description"]);
 });
 
-test("getting attributes based on key", () => {
-  let objArr= [{ _id: 1, description: "" }];
-  expect(
-    helper.getAttributes(objArr)
-  ).toEqual(["_id", "description"]);
+test("null object array", () => {
+  let objArr = null;
+  expect(helper.getAttributes(objArr)).toEqual([]);
+});
+
+test("empty object array", () => {
+  let objArr = [];
+  expect(helper.getAttributes(objArr)).toEqual([]);
+});
+
+test("input is not of object type", () => {
+  let objArr = "test";
+  expect(helper.getAttributes(objArr)).toEqual([]);
 });
