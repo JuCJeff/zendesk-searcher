@@ -3,7 +3,7 @@
 ![Alt text](/public/images/zendesk-searcher-banner.png?raw=true "Banner Image")
 
 ## Prerequisite
-Nodejs needs to be installed.
+[Nodejs](https://nodejs.org/en/) needs to be installed.
 
 ## Usage Instructions
 1. Start and compile backend server app in the `server` folder. Instructions are below in **Backend setup**
