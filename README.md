@@ -63,6 +63,7 @@ npm run prod
 cd frontend-web
 npm install
 ```
+Due to conflicting linter issue, you may need to run --fix before serving the frontend
 
 ### Compiles and hot-reloads for development
 ```
