@@ -14,56 +14,11 @@ let organizations = require("./models/organizations.json");
 
 let modes = ["users", "organizations", "tickets"];
 
-let usersAttr = [
-  "_id",
-  "url",
-  "external_id",
-  "name",
-  "alias",
-  "created_at",
-  "active",
-  "verified",
-  "shared",
-  "locale",
-  "timezone",
-  "last_login_at",
-  "email",
-  "phone",
-  "signature",
-  "organization_id",
-  "tags",
-  "suspended",
-  "role"
-];
-let organizationsAttr = [
-  "_id",
-  "url",
-  "external_id",
-  "name",
-  "domain_names",
-  "created_at",
-  "details",
-  "shared_tickets",
-  "tags"
-];
-let ticketsAttr = [
-  "_id",
-  "url",
-  "external_id",
-  "created_at",
-  "type",
-  "subject",
-  "description",
-  "priority",
-  "status",
-  "submitter_id",
-  "assignee_id",
-  "organization_id",
-  "tags",
-  "has_incidents",
-  "due_at",
-  "via"
-];
+let getAttributes = require("./libs/getAttributes.js");
+
+let usersAttr = getAttributes(users);
+let organizationsAttr = getAttributes(organizations);
+let ticketsAttr = getAttributes(tickets);
 
 let generateResObjArr = require("./libs/helper.js");
 
@@ -103,7 +58,7 @@ app.post("/organizations", (req, res) => {
   res.json(resObjArr);
 });
 
-app.get("/mode", (req,res) => {
+app.get("/mode", (req, res) => {
   res.json(modes);
 });
 
