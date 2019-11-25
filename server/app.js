@@ -85,4 +85,11 @@ app.get("/", (req, res) => {
   res.send("You are connected to the server.");
 });
 
+// default route
+app.use(function(req, res) {
+  res.status(404).json({
+    message: "Your specified request is not available. Please try another route."
+  });
+});
+
 app.listen(process.env.PORT || 8081);
