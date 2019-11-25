@@ -7,7 +7,8 @@
     "start": "./node_modules/nodemon/bin/nodemon.js app.js",
     "build": "webpack",
     "test": "jest",
-    "lint": "eslint app.js lib/** test/**"
+    "lint": "eslint app.js lib/** test/**",
+    "prod": "node dist/server.bundle.js"
   },
   "author": "Jeff Ma",
   "license": "ISC",
