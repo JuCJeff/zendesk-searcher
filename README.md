@@ -9,7 +9,7 @@
 1. Start and compile backend server app in the `server` folder. Instructions are below in **Backend setup**
 2. Start and compile frontend app in the `frontend-web` folder. Instructions are below in **Frontend setup** 
 ![Alt text](/public/images/blank-user-interface.png?raw=true "Landing Screen Image")
-3. Opens frontend user interface through http://localhost:8080/.
+3. Open frontend user interface through http://localhost:8080/.
 4. Select search mode from dropdown menu
 ![Alt text](/public/images/user-flow-step-1.png?raw=true "User Flow Step 1")
 5. Select search term from dropdown menu
