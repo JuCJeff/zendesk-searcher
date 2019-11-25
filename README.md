@@ -41,6 +41,11 @@ npm start
 npm test
 ```
 
+### Lints and fixes files through ESlint
+```
+npm lint <file name>
+```
+
 ## Frontend setup
 ```
 cd frontend-web
@@ -57,7 +62,7 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
+### Lints and fixes files through ESlint
 ```
 npm run lint
 ```
