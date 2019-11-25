@@ -23,6 +23,22 @@
 1. The search results are generated based on exact value matching.
 2. The data is directly served through given json files in the backend rather than put in a database for easier setup.
 
+## Backend setup
+```
+cd backend
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm start
+```
+
+### Run tests through Jest
+```
+npm test
+```
+
 ## Frontend setup
 ```
 cd frontend-web
@@ -42,20 +58,4 @@ npm run build
 ### Lints and fixes files
 ```
 npm run lint
-```
-
-## Backend setup
-```
-cd backend
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm start
-```
-
-### Run tests through Jest
-```
-npm test
 ```
