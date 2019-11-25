@@ -9,15 +9,16 @@
 1. Start and compile backend server app in the `server` folder. Instructions are below in **Backend setup**
 2. Start and compile frontend app in the `frontend-web` folder. Instructions are below in **Frontend setup** 
 ![Alt text](/public/images/blank-user-interface.png?raw=true "Landing Screen Image")
-3. Select search mode from dropdown menu
+3. Open frontend user interface through http://localhost:8080/.
+4. Select search mode from dropdown menu
 ![Alt text](/public/images/user-flow-step-1.png?raw=true "User Flow Step 1")
-4. Select search term from dropdown menu
+5. Select search term from dropdown menu
 ![Alt text](/public/images/user-flow-step-2.png?raw=true "User Flow Step 2")
-5. Fill out search field in the input box (optionally leave blank)
+6. Fill out search field in the input box (optionally leave blank)
 ![Alt text](/public/images/user-flow-step-3.png?raw=true "User Flow Step 3")
-6. Click **Search** button to generate search result(s)
+7. Click **Search** button to generate search result(s)
 ![Alt text](/public/images/user-flow-step-4.png?raw=true "User Flow Step 4")
-7. Click **Clear** to clear results
+8. Click **Clear** to clear results
 
 ## Notations
 1. The search results are generated based on exact value matching.
@@ -28,7 +29,7 @@
 
 ## Backend setup
 ```
-cd backend
+cd server
 npm install
 ```
 
@@ -73,7 +74,3 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files through ESlint
-```
-npm run lint
-```
