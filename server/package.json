@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "./node_modules/nodemon/bin/nodemon.js app.js",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint"
   },
   "author": "Jeff Ma",
   "license": "ISC",
@@ -18,6 +19,7 @@
     "nodemon": "^2.0.1"
   },
   "devDependencies": {
+    "eslint": "^6.7.1",
     "jest": "^24.9.0"
   }
 }
