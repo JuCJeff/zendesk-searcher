@@ -27,6 +27,11 @@ app.get("/users", (req, res) => {
 app.post("/users", (req, res) => {
   let term = req.body["term"];
   let value = req.body["value"];
+  if (term == null || value == null || users == null) {
+    res.status(400).json({
+      message: "Request format is not correct."
+    });
+  }
   let resObjArr = helper.generateResObjArr(users, term, value);
 
   res.json(resObjArr);
@@ -39,6 +44,11 @@ app.get("/tickets", (req, res) => {
 app.post("/tickets", (req, res) => {
   let term = req.body["term"];
   let value = req.body["value"];
+  if (term == null || value == null || tickets == null) {
+    res.status(400).json({
+      message: "Request format is not correct."
+    });
+  }
   let resObjArr = helper.generateResObjArr(tickets, term, value);
 
   res.json(resObjArr);
@@ -51,6 +61,11 @@ app.get("/organizations", (req, res) => {
 app.post("/organizations", (req, res) => {
   let term = req.body["term"];
   let value = req.body["value"];
+  if (term == null || value == null || organizations == null) {
+    res.status(400).json({
+      message: "Request format is not correct."
+    });
+  }
   let resObjArr = helper.generateResObjArr(organizations, term, value);
 
   res.json(resObjArr);
@@ -88,7 +103,8 @@ app.get("/", (req, res) => {
 // default route
 app.use(function(req, res) {
   res.status(404).json({
-    message: "Your specified request is not available. Please try another route."
+    message:
+      "Your specified request is not available. Please try another route."
   });
 });
 

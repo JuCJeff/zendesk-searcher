@@ -1,4 +1,4 @@
-const helper = require("../libs/helper");
+const helper = require("../lib/helper");
 
 test("an empty array of base input results in an empty array", () => {
   expect(helper.generateResObjArr([], "_id", 1)).toEqual([]);
@@ -64,4 +64,11 @@ test("matching empty results in value", () => {
   expect(
     helper.generateResObjArr(onlyStringValueObject, "description", "")
   ).toEqual([{ _id: 1, description: "" }]);
+});
+
+test("getting attributes based on key", () => {
+  let objArr= [{ _id: 1, description: "" }];
+  expect(
+    helper.getAttributes(objArr)
+  ).toEqual(["_id", "description"]);
 });

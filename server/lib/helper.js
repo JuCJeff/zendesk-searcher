@@ -17,7 +17,7 @@ function generateResObjArr(base, term, value) {
 
 function getAttributes(objArr) {
   let resArr = [];
-  if (objArr.length == 0) {
+  if (objArr == null || objArr.length == 0) {
     return resArr;
   }
 
