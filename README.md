@@ -63,15 +63,14 @@ npm run prod
 cd frontend-web
 npm install
 ```
-Due to conflicting linter issue, you may need to run `--fix` as a flag when serving the frontend
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve (--fix)
+npm run serve
 ```
 
 ### Compiles and minifies for production
 ```
-npm run build (--fix)
+npm run build
 ```
 
