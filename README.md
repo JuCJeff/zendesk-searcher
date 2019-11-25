@@ -22,6 +22,24 @@
 ## Notations
 1. The search results are generated based on exact value matching.
 2. The data is directly served through given json files in the backend rather than put in a database for easier setup.
+3. The application assumes that user data will not contain nested objects.
+4. There could be empty data correspond to provided search attributes.
+
+## Backend setup
+```
+cd backend
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm start
+```
+
+### Run tests through Jest
+```
+npm test
+```
 
 ## Frontend setup
 ```
@@ -42,20 +60,4 @@ npm run build
 ### Lints and fixes files
 ```
 npm run lint
-```
-
-## Backend setup
-```
-cd backend
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm start
-```
-
-### Run tests through Jest
-```
-npm test
 ```
