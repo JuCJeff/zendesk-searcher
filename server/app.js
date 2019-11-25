@@ -14,13 +14,11 @@ let organizations = require("./models/organizations.json");
 
 let modes = ["users", "organizations", "tickets"];
 
-let getAttributes = require("./libs/getAttributes.js");
+let helper = require("./libs/helper.js");
 
-let usersAttr = getAttributes(users);
-let organizationsAttr = getAttributes(organizations);
-let ticketsAttr = getAttributes(tickets);
-
-let generateResObjArr = require("./libs/helper.js");
+let usersAttr = helper.getAttributes(users);
+let organizationsAttr = helper.getAttributes(organizations);
+let ticketsAttr = helper.getAttributes(tickets);
 
 app.get("/users", (req, res) => {
   res.json(users);
@@ -29,7 +27,7 @@ app.get("/users", (req, res) => {
 app.post("/users", (req, res) => {
   let term = req.body["term"];
   let value = req.body["value"];
-  let resObjArr = generateResObjArr(users, term, value);
+  let resObjArr = helper.generateResObjArr(users, term, value);
 
   res.json(resObjArr);
 });
@@ -41,7 +39,7 @@ app.get("/tickets", (req, res) => {
 app.post("/tickets", (req, res) => {
   let term = req.body["term"];
   let value = req.body["value"];
-  let resObjArr = generateResObjArr(tickets, term, value);
+  let resObjArr = helper.generateResObjArr(tickets, term, value);
 
   res.json(resObjArr);
 });
@@ -53,7 +51,7 @@ app.get("/organizations", (req, res) => {
 app.post("/organizations", (req, res) => {
   let term = req.body["term"];
   let value = req.body["value"];
-  let resObjArr = generateResObjArr(organizations, term, value);
+  let resObjArr = helper.generateResObjArr(organizations, term, value);
 
   res.json(resObjArr);
 });
