@@ -50,7 +50,9 @@
       "jest": true
     },
     "extends": [
-      "eslint:recommended"
+      "eslint:recommended",
+      "vue",
+      "vuetify"
     ],
     "rules": {},
     "parserOptions": {
