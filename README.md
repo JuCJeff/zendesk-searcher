@@ -74,7 +74,3 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files through ESlint
-```
-npm run lint
-```
