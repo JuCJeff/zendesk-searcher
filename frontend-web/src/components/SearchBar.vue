@@ -6,21 +6,19 @@
 
 <script>
 export default {
-  name: "SearchBar",
+    name: "SearchBar",
 
-  data: () => ({}),
+    data: () => ({}),
 
-  computed: {
-    search: {
-      get() {
-        return this.$store.getters.getCurrentSearch;
-      },
-      set(input) {
-        this.$store.dispatch("changeCurrentSearch", input);
+    computed: {
+      search: {
+        get() {
+          return this.$store.getters.getCurrentSearch;
+        },
+        set(input) {
+          this.$store.dispatch("changeCurrentSearch", input);
+        }
       }
-    }
-  },
-
-  watch: {}
-};
+    },
+  }
 </script>
