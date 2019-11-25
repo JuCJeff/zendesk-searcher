@@ -12,11 +12,11 @@ export default {
 
     computed: {
       search: {
-        get() {
-          return this.$store.getters.getCurrentSearch;
+        get () {
+          return this.$store.getters.getCurrentSearch
         },
-        set(input) {
-          this.$store.dispatch("changeCurrentSearch", input);
+        set (input) {
+          this.$store.dispatch("changeCurrentSearch", input)
         }
       }
     },

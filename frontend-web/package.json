@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "eslint . --ext .js"
+    "build": "vue-cli-service build"
   },
   "dependencies": {
     "axios": "^0.19.0",
@@ -51,10 +50,7 @@
       "jest": true
     },
     "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended",
-      "vue",
-      "vuetify"
+      "eslint:recommended"
     ],
     "rules": {},
     "parserOptions": {
