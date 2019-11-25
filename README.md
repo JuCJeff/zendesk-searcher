@@ -51,6 +51,11 @@ npm test
 npm run lint
 ```
 
+## Run prodcution server once generated
+```
+npm run prod
+```
+
 ## Frontend setup
 ```
 cd frontend-web
